@@ -28,6 +28,7 @@ body {
     text-decoration: none;
     color: inherit;
     text-transform: uppercase;
+    font-size: 1.2em
 }
 .menu-icon {
     background: #fff
@@ -51,6 +52,7 @@ body {
 .nav-link a {
     margin: .2rem;
     padding: 1rem .5rem;
+    font-family: 'Times New Roman', Times, serif
 }
 
 .nav-link a:hover {
@@ -65,7 +67,7 @@ body {
     display: none;
 }
 
-.menu-icon__line {
+.menu-icon-line {
     display: block;
     position: relative;
     background: #000;
@@ -75,8 +77,8 @@ body {
     transition: background .8s ease;
 }
 
-.menu-icon__line::before, 
-.menu-icon__line::after {
+.menu-icon-line::before, 
+.menu-icon-line::after {
     content: '';
     position: absolute;
     height: 100%;
@@ -86,11 +88,11 @@ body {
     transition: background .8s ease;
 }
 
-.menu-icon__line::before {
+.menu-icon-line::before {
     transform: translateY(-5px)
 }
 
-.menu-icon__line::after {
+.menu-icon-line::after {
     transform: translateY(5px)
 }
 
@@ -101,7 +103,7 @@ body {
 /* Hero---------------------------------- */
 .hero {
     height: 100vh;
-    background: url(../images/hero-img.jpg); /*("https://composeclick.com/wp-content/uploads/2018/05/nature-1.jpg")*/  no-repeat bottom center;
+    background: url(../images/pink-textured-bg.jpg) no-repeat bottom center;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -109,15 +111,178 @@ body {
     padding: 0 10vh;
     color: #fff;
 }
+.hero-text {
+    display: block
+}
 .hero h1 {
     position: relative;
-    font-size: 4rem;
+    font-size: 6rem;
     text-transform: uppercase;
     text-align: center;
     background: rgb(0,0,0,0.2);
     padding: 2rem;
     border-radius: 20px 0;
+    
 }
+
+.hero h2 {
+    font-size: 3rem;
+    letter-spacing: 4px;
+    text-align: center
+}
+.hero p {
+    font-size: 2em;
+    text-align: center
+    
+}
+
+
+/* Blog Categories---------------------------------- */
+.container{
+    width: 100%;
+}
+
+.blogpost-cat{
+    display: grid;
+    grid-template-columns: repeat(3, 32%);
+    grid-column-gap: 2%;
+    text-align: center;
+    width: 100%;
+    height: 400px;
+    align-content: center;
+    /*background-color: #F7F7F7;*/
+}
+
+.imagecenter{
+    width: 60%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.blog_icon{
+    width: 30%;
+    height: 30%;
+}
+
+.blogposts h2 {
+    color: #9b8884;
+    text-transform: uppercase;
+    text-decoration: underline
+}
+
+.blogposts p{
+    color: #9b8884
+}
+/* ---------------------------------- */
+
+/* Most Recent Blogs---------------------------------- */
+
+.home-blog-cat{
+    width: 100%;
+}
+
+.blogposts{
+    display: grid;
+    grid-template-columns: repeat(3, 32%);
+    grid-column-gap: 2%;
+    text-align: center;
+    width: 80%;
+    padding: 0 10%;
+    height: 400px;
+    align-content: center;
+    /*background-color: #F7F7F7;*/
+}
+
+
+.home-blogs-container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.home-blogs-container:hover .overlay {
+  height: 100%;
+}
+
+.text {
+  white-space: nowrap; 
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+
+/* ---------------------------------- */
+
+
+/* Follow Me---------------------------------- */
+.followme{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-column-gap: 0;
+    text-align: center;
+    width: 80%;
+    padding: 0 10%;
+    height: 400px;
+    align-content: center;
+    margin-top: 5em
+    /*background-color: #F7F7F7;*/
+}
+
+.followme-forms {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.followme_imgtext{
+    width: 60%;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 10%
+}
+
+.socials{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+}
+
+.social_icon{
+    width: 60%;
+    padding-left: 20%;
+    padding-right: 20%
+}
+
+/* ---------------------------------- */
+
+
+/* Footer---------------------------------- */
+footer {
+    width: 80%;
+    padding: 0 10%;
+}
+
 
 
 /* Media Queries---------------------------------- */
@@ -131,17 +296,17 @@ body {
         display: block
     }
 
-    .menu-icon__line {
+    .menu-icon-line {
         animation: closedMid 0.8s backwards;
         animation-direction: reverse
     }
 
-    .menu-icon__line::before {
+    .menu-icon-line::before {
         animation: closedTop 0.8s backwards;
         animation-direction: reverse
     }
 
-    .menu-icon__line:after {
+    .menu-icon-line:after {
         animation: closedBottom 0.8s backwards;
         animation-direction: reverse
     }
@@ -186,17 +351,17 @@ body {
         anim
     }
 
-    .menu-btn:checked ~* .menu-icon__line {
+    .menu-btn:checked ~* .menu-icon-line {
         background: red;
         animation: openMid 0.8s forwards
     }
 
-    .menu-btn:checked ~* .menu-icon__line::before {
+    .menu-btn:checked ~* .menu-icon-line::before {
         background: red;
         animation: openTop 0.8s forwards
     }
 
-    .menu-btn:checked ~* .menu-icon__line:after {
+    .menu-btn:checked ~* .menu-icon-line:after {
         background: red;
         animation: openBottom 0.8s forwards
     }
@@ -262,6 +427,10 @@ body {
         }
     }
 }
+
+
+
+
 
 
 
